@@ -7,27 +7,25 @@ import (
 	"log"
 	"os"
 	"strings"
-
-	"github.com/spf13/cobra"
 )
 
-var targetFile, keywordFile, outputFile string
+// var targetFile, keywordFile, outputFile string
 
-func main() {
-	rootCmd := &cobra.Command{Use: "count"}
+// func main() {
+// 	rootCmd := &cobra.Command{Use: "count"}
 
-	rootCmd.Flags().StringVarP(&targetFile, "target", "t", "", "target file name (required)")
-	rootCmd.Flags().StringVarP(&keywordFile, "keyword", "k", "", "keyword file name (required)")
-	rootCmd.Flags().StringVarP(&outputFile, "output", "o", "output.txt", "output file name")
-	rootCmd.MarkFlagRequired("target")
-	rootCmd.MarkFlagRequired("keyword")
-	rootCmd.Run = func(cmd *cobra.Command, args []string) {
-		fmt.Println("counting...")
-		Count(targetFile, keywordFile, outputFile)
-	}
+// 	rootCmd.Flags().StringVarP(&targetFile, "target", "t", "", "target file name (required)")
+// 	rootCmd.Flags().StringVarP(&keywordFile, "keyword", "k", "", "keyword file name (required)")
+// 	rootCmd.Flags().StringVarP(&outputFile, "output", "o", "output.txt", "output file name")
+// 	rootCmd.MarkFlagRequired("target")
+// 	rootCmd.MarkFlagRequired("keyword")
+// 	rootCmd.Run = func(cmd *cobra.Command, args []string) {
+// 		fmt.Println("counting...")
+// 		Count(targetFile, keywordFile, outputFile)
+// 	}
 
-	rootCmd.Execute()
-}
+// 	rootCmd.Execute()
+// }
 func Count(targetFile, keywordFile, outputFile string) {
 	target := readTarget(targetFile)
 	keywords := readKeyword(keywordFile)
