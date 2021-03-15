@@ -1,4 +1,4 @@
-package main
+package keywordCounter
 
 import (
 	"bufio"
